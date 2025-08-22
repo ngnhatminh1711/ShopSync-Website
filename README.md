@@ -19,18 +19,6 @@ Dự án được chuyển đổi từ bản thiết kế **Figma** sang **HTML,
 - **JavaScript**
 - **Figma** (tham khảo thiết kế)
 
-## 📂 Cấu trúc thư mục
-project/
-│
-├── index.html # Trang chủ
-├── css/
-│ └── style.css # File CSS chính
-├── js/
-│ └── script.js # File JavaScript
-└── assets/
-├── images/ # Hình ảnh
-└── icons/ # Biểu tượng
-
 ## 🚀 Cách chạy dự án
 1. Clone repo:
    ```bash
