@@ -1,0 +1,513 @@
+/* 
+    - Bộ chọn phổ quát (*): Đặt lại lề (margin), đệm (padding) và box-sizing cho tất cả các phần tử.
+    - Điều này đảm bảo khoảng cách và bố cục nhất quán trên các trình duyệt khác nhau.
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 
+    - Kiểu cho body: Đặt phông chữ và màu nền mặc định cho toàn bộ trang.
+*/
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fff;
+}
+
+/* 
+    - Thanh tiêu đề trên cùng: Chứa thông báo giảm giá và bộ chọn ngôn ngữ.
+    - Sử dụng flexbox để căn giữa văn bản giảm giá và định vị bộ chọn ngôn ngữ.
+*/
+.top-header {
+    background: #000;
+    color: #fafafa;
+    padding: 12px 136px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    position: relative;
+}
+
+/* 
+    - Văn bản giảm giá: Thông điệp quảng cáo chính trong tiêu đề trên cùng.
+    - flex-grow: 1 cho phép nó chiếm không gian có sẵn.
+    - text-align: center căn giữa nội dung văn bản.
+*/
+.top-header .sale-text {
+    flex-grow: 1;
+    text-align: center;
+    padding-right: 100px;
+}
+
+/* 
+    - Liên kết "ShopNow" bên trong văn bản giảm giá.
+*/
+.top-header .sale-text span {
+    text-decoration: underline;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+/* 
+    - Bộ chọn ngôn ngữ: Được định vị tuyệt đối ở phía bên phải của tiêu đề trên cùng.
+*/
+.top-header .lang {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    position: absolute;
+    right: 136px;
+}
+
+/* 
+    - Tiêu đề chính: Chứa logo, điều hướng và khu vực tìm kiếm.
+    - Sử dụng flexbox để căn chỉnh các mục theo chiều ngang.
+*/
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 135px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+/* 
+    - Kiểu dáng logo.
+*/
+.logo {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: 0.72px;
+    text-decoration: none;
+    color: #000;
+}
+
+/* 
+    - Vùng chứa các liên kết điều hướng.
+*/
+.nav-links {
+    display: flex;
+    gap: 48px;
+    font-size: 16px;
+}
+
+/* 
+    - Các liên kết điều hướng riêng lẻ.
+*/
+.nav-links a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* 
+    - Kiểu liên kết điều hướng đang hoạt động (không được sử dụng trong trang này).
+*/
+.nav-links a.active {
+    color: #DB4444;
+}
+
+/* 
+    - Vùng chứa cho hộp tìm kiếm và các biểu tượng người dùng.
+*/
+.search-area {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+/* 
+    - Kiểu dáng hộp tìm kiếm.
+*/
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+    background: #F5F5F5;
+    padding: 7px 20px;
+    border-radius: 4px;
+}
+
+/* 
+    - Trường nhập liệu bên trong hộp tìm kiếm.
+*/
+.search-box input {
+    border: none;
+    background: transparent;
+    font-size: 12px;
+    width: 200px;
+    outline: none;
+}
+
+/* 
+    - Vùng chứa cho các biểu tượng tiêu đề (danh sách yêu thích, giỏ hàng, người dùng).
+*/
+.header-icons {
+    display: flex;
+    gap: 16px;
+}
+
+/* 
+    - Điều hướng breadcrumb: Hiển thị đường dẫn của người dùng trên trang web.
+*/
+.breadcrumb {
+    padding: 80px 0 0 135px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* 
+    - Liên kết "Home" trong breadcrumb.
+*/
+.breadcrumb-home {
+    color: rgba(0,0,0,0.5);   /* "Home" có màu xám */
+    text-decoration: none;
+}
+
+.breadcrumb-home:hover {
+    color: #DB4444;
+}
+
+/* 
+    - Dấu phân cách trong breadcrumb.
+*/
+.breadcrumb-separator {
+    color: rgba(0,0,0,0.5);
+}
+
+/* 
+    - Trang hiện tại trong breadcrumb.
+*/
+.breadcrumb-current {
+    color: #000;              /* "404 Error" có màu đen */
+    font-weight: 500;
+}
+
+/* 
+    - Khu vực nội dung chính cho thông báo lỗi 404.
+*/
+.error-content {
+    text-align: center;
+    margin-top: 120px;
+}
+
+/* 
+    - Tiêu đề "404 Not Found".
+*/
+.error-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 110px;
+    line-height: 115px;
+    letter-spacing: 3.3px;
+    color: #000;
+    margin-bottom: 40px;
+}
+
+/* 
+    - Văn bản giải thích trên trang lỗi.
+*/
+.error-text {
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 40px;
+}
+
+/* 
+    - Nút "Quay lại trang chủ".
+*/
+.back-button {
+    display: inline-block;
+    background: #DB4444;
+    color: #fff;
+    padding: 16px 48px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* 
+    - Phần chân trang (footer): Chứa các liên kết và thông tin khác nhau.
+*/
+.footer {
+    background: #000;
+    color: #fff;
+    padding: 80px 135px 40px;
+    margin-top: 140px;
+}
+
+/* 
+    - Vùng chứa nội dung chính trong chân trang.
+    - Sử dụng flexbox để bố trí các phần khác nhau của chân trang.
+*/
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 87px;
+}
+
+/* 
+    - Một cột/phần duy nhất trong chân trang.
+*/
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* 
+    - Tiêu đề cho mỗi phần của chân trang (ví dụ: "Hỗ trợ", "Tài khoản").
+*/
+.footer-title {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* 
+    - Vùng chứa cho các liên kết trong một phần của chân trang.
+*/
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    font-size: 16px;
+}
+
+/* 
+    - Các liên kết riêng lẻ trong chân trang.
+*/
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+/* 
+    - Vùng chứa cho các yếu tố tải xuống ứng dụng (mã QR và các nút cửa hàng).
+*/
+.app-downloads {
+    margin-top: 24px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+/* 
+    - Kiểu dáng mã QR.
+*/
+.qr-code {
+    width: 80px;
+    height: 80px;
+    background: #000;
+    padding: 2px;
+    border: 2.5px solid #fff;
+}
+
+/* 
+    - Vùng chứa cho các nút cửa hàng ứng dụng.
+*/
+.store-buttons {
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* 
+    - Nút cửa hàng ứng dụng riêng lẻ.
+*/
+.store-button {
+    width: 110px;
+    height: 40px;
+    border: 0.6px solid #fff;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 
+    - Vùng chứa cho các biểu tượng mạng xã hội.
+*/
+.footer-social {
+    display: flex;
+    gap: 24px;
+    margin-top: 24px;
+}
+
+/* 
+    - Phần dưới cùng của chân trang với thông tin bản quyền.
+*/
+.footer-bottom {
+    display: flex;
+    justify-content: center;   /* Căn giữa theo chiều ngang */
+    align-items: center;       /* Căn giữa theo chiều dọc */
+    margin-top: 40px;
+    font-size: 14px;
+    color: #aaa;
+    opacity: 0.8;
+    gap: 8px;                  /* khoảng cách giữa biểu tượng và văn bản */
+    text-align: center;
+}
+
+/* 
+    - Kiểu dáng cụ thể cho hộp tìm kiếm trong chân trang.
+*/
+.footer .search-box {
+    background: transparent;   /* Nền trong suốt để hiển thị màu của chân trang */
+    border: 1px solid #fff;    /* Viền trắng */
+    padding: 10px 16px;
+    border-radius: 4px;
+    gap: 10px;
+}
+
+/* 
+    - Trường nhập liệu trong hộp tìm kiếm của chân trang.
+*/
+.footer .search-box input {
+    color: #fff;               /* Chữ trắng */
+    background: transparent;   /* Nền trong suốt */
+}
+
+/* 
+    - Kiểu dáng văn bản giữ chỗ cho hộp tìm kiếm của chân trang.
+*/
+.footer .search-box input::placeholder {
+    color: rgba(255,255,255,0.6); /* Văn bản giữ chỗ màu xám nhạt */
+}
+
+/* 
+    - Biểu tượng gửi trong hộp tìm kiếm của chân trang.
+    - filter được sử dụng để đảo ngược màu biểu tượng thành màu trắng.
+*/
+.footer .search-box img {
+    filter: brightness(0) invert(1); /* Đảo ngược màu biểu tượng thành trắng */
+    cursor: pointer;
+}
+
+/* 
+    - Kiểu dáng đáp ứng (Responsive): Điều chỉnh cho các kích thước màn hình khác nhau.
+*/
+
+/* Màn hình HD (>= 1280px) */
+@media (max-width: 1300px) {
+    .top-header,
+    .main-header,
+    .footer {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+    .breadcrumb {
+        padding-left: 60px;
+    }
+    .footer-content {
+        gap: 40px;
+    }
+}
+
+
+/* Di động và Máy tính bảng (<= 768px) */
+@media (max-width: 768px) {
+    .top-header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 15px;
+        text-align: center;
+    }
+
+    .top-header .sale-text {
+        padding-right: 0; /* Xóa đệm cho chế độ xem di động */
+    }
+
+    .top-header .lang {
+        position: static; /* Đặt lại vị trí để xếp chồng trong cột */
+    }
+
+    .main-header {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 15px;
+    }
+
+    .nav-links {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .search-area {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .search-box {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .search-box input {
+        width: 100%;
+    }
+
+    .header-icons {
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .breadcrumb {
+        padding: 40px 0 0 15px;
+    }
+
+    .error-content {
+        margin-top: 60px;
+        padding: 0 15px;
+    }
+
+    .error-title {
+        font-size: 70px;
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+
+    .error-text {
+        margin-bottom: 30px;
+    }
+
+    .footer {
+        padding: 40px 15px 20px;
+        margin-top: 80px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .footer-section {
+        align-items: center;
+    }
+
+    .footer .search-box {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .app-downloads {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .store-buttons {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer-bottom {
+        margin-top: 30px;
+    }
+}
