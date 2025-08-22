@@ -1,0 +1,513 @@
+/* Nhập các phông chữ từ Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Inter:wght@700&display=swap');
+
+/* Thiết lập lại các thuộc tính mặc định của trình duyệt */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Kiểu dáng chung cho body */
+body {
+    font-family: 'Poppins', sans-serif; /* Sử dụng phông chữ Poppins */
+    background: #fff; /* Nền trắng */
+}
+
+/* Kiểu dáng cho thanh header trên cùng */
+.top-header {
+    background: #000;
+    color: #fafafa; /* Chữ màu trắng nhạt */
+    padding: 12px 136px;
+    display: flex;
+    justify-content: center; /* Căn giữa nội dung theo chiều ngang */
+    align-items: center; /* Căn giữa nội dung theo chiều dọc */
+    font-size: 14px;
+    position: relative; /* Vị trí tương đối để định vị phần tử con */
+}
+
+.top-header .sale-text {
+    text-align: center; /* Căn giữa văn bản */
+}
+
+.top-header .sale-text span {
+    text-decoration: underline; /* Gạch chân văn bản */
+    cursor: pointer; /* Con trỏ hình bàn tay */
+    margin-left: 8px; /* Khoảng cách bên trái */
+}
+
+.top-header .lang {
+    position: absolute; /* Vị trí tuyệt đối */
+    right: 136px; /* Cách lề phải 136px */
+    top: 50%; /* Căn giữa theo chiều dọc */
+    transform: translateY(-50%); /* Điều chỉnh vị trí để căn giữa chính xác */
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Khoảng cách giữa các phần tử con */
+}
+
+/* Kiểu dáng cho header chính */
+.main-header {
+    display: flex;
+    justify-content: space-between; /* Phân bố không gian đều giữa các phần tử */
+    align-items: center;
+    padding: 40px 135px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3); /* Đường viền dưới */
+}
+
+.logo h1 {
+    margin: 0;
+    font-family: 'Inter', sans-serif; /* Sử dụng phông chữ Inter */
+    font-weight: 700; /* Độ đậm chữ */
+    font-size: 24px;
+    letter-spacing: 0.72px; /* Khoảng cách giữa các ký tự */
+}
+
+.logo a {
+    text-decoration: none; /* Bỏ gạch chân liên kết */
+    color: #000; /* Chữ màu đen */
+}
+
+/* Kiểu dáng cho các liên kết điều hướng */
+.nav-links {
+    display: flex;
+    gap: 48px;
+    font-size: 16px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #000;
+}
+
+.nav-links a.active {
+    background: url('../images/Underline.svg') no-repeat bottom;
+    background-size: 100% auto;
+    padding-bottom: 3px;
+}
+
+/* Kiểu dáng cho khu vực tìm kiếm */
+.search-area {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+    background: #F5F5F5; /* Nền xám nhạt */
+    padding: 7px 20px;
+    border-radius: 4px; /* Bo tròn góc */
+}
+
+.search-box input {
+    border: none; /* Bỏ viền */
+    background: transparent; /* Nền trong suốt */
+    font-size: 12px;
+    width: 200px;
+    outline: none; /* Bỏ đường viền khi focus */
+}
+
+.header-icons {
+    display: flex;
+    gap: 16px;
+}
+
+/* Kiểu dáng cho Breadcrumb */
+.breadcrumb {
+    padding: 80px 0 0 135px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.breadcrumb-home {
+    color: rgba(0,0,0,0.5); /* Màu chữ xám mờ */
+    text-decoration: none;
+}
+
+.breadcrumb-home:hover {
+    color: #DB4444; /* Đổi màu khi di chuột qua */
+}
+
+.breadcrumb-separator {
+    color: rgba(0,0,0,0.5);
+}
+
+.breadcrumb-current {
+    color: #000;
+    font-weight: 500;
+}
+
+/* Kiểu dáng cho container chứa nội dung liên hệ */
+.contact-container {
+    display: flex;
+    gap: 30px;
+    max-width: 1170px; /* Chiều rộng tối đa */
+    margin: 60px auto; /* Căn giữa container */
+}
+
+/* Kiểu dáng cho phần thông tin liên hệ */
+.contact-info {
+    width: 340px;
+    padding: 40px 35px;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    box-shadow: 0px 1px 13px 0px rgba(0, 0, 0, 0.05); /* Đổ bóng */
+}
+
+.contact-section {
+    margin-bottom: 32px;
+}
+
+.contact-section:not(:last-child) {
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2); /* Đường kẻ phân cách */
+}
+
+.contact-title {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.contact-title .icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Hình tròn */
+    background-color: #DB4444; /* Nền đỏ */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-title h2 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #000000;
+}
+
+.contact-content {
+    color: #000000;
+    font-size: 14px;
+    line-height: 21px; /* Chiều cao dòng */
+}
+
+.contact-content p {
+    margin-bottom: 16px;
+}
+
+.contact-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Kiểu dáng cho biểu mẫu liên hệ */
+.contact-form {
+    flex: 1; /* Chiếm phần không gian còn lại */
+    padding: 40px 31px;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    box-shadow: 0px 1px 13px 0px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.form-control {
+    flex: 1;
+    position: relative;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 13px 16px;
+    background-color: #F5F5F5;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: rgba(0, 0, 0, 0.5); /* Màu cho chữ giữ chỗ */
+}
+
+.contact-form textarea {
+    height: 207px;
+    resize: none; /* Không cho phép thay đổi kích thước */
+    margin-bottom: 32px;
+}
+
+.form-control.required::after {
+    content: '*'; /* Thêm dấu sao cho trường bắt buộc */
+    color: #DB4444;
+    position: absolute;
+    top: 13px;
+    right: 16px;
+}
+
+.send-button {
+    background-color: #DB4444;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 4px;
+    padding: 16px 48px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s; /* Hiệu ứng chuyển đổi màu nền */
+    float: right; /* Nút nằm bên phải */
+}
+
+.send-button:hover {
+    background-color: #E95454; /* Đổi màu khi di chuột */
+}
+
+/* Kiểu dáng cho Footer */
+.footer {
+    background: #000;
+    color: #fff;
+    padding: 80px 135px 40px;
+    margin-top: 140px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 87px;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column; /* Các phần tử xếp chồng lên nhau */
+    gap: 24px;
+}
+
+.footer-title {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    font-size: 16px;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.8; /* Độ mờ */
+}
+
+.footer p {
+    opacity: 0.8;
+}
+
+.email-subscribe {
+    display: flex;
+    align-items: center;
+    width: 217px;
+    position: relative;
+}
+
+.email-subscribe input {
+    width: 100%;
+    padding: 12px 16px;
+    background: transparent;
+    border: 1.5px solid #FFFFFF;
+    border-radius: 4px;
+    color: #FFFFFF;
+    font-size: 16px;
+    outline: none;
+}
+
+.email-subscribe input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.email-subscribe button {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.email-subscribe button img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1); /* Đổi màu icon thành trắng */
+}
+
+/* Kiểu dáng cho phần tải ứng dụng */
+.download-options {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.qr-code {
+    width: 80px;
+    height: 80px;
+    background: #000;
+    padding: 2px;
+    border: 2.5px solid #fff;
+}
+
+.qr-code img {
+    width: 100%;
+    height: 100%;
+}
+
+.app-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.app-buttons img {
+    width: 110px;
+    height: 40px;
+    border: 0.6px solid #fff;
+    border-radius: 4px;
+}
+
+.footer-social {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.footer-social img {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+/* Kiểu dáng cho phần chân trang dưới cùng */
+.footer-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    padding-top: 16px;
+    font-size: 14px;
+    color: #aaa;
+    opacity: 0.8;
+    gap: 8px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive - Thiết kế đáp ứng cho các kích thước màn hình khác nhau */
+@media (max-width: 1200px) {
+    .top-header,
+    .main-header {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .top-header .lang {
+        right: 20px;
+    }
+
+    .breadcrumb {
+        padding-left: 20px;
+    }
+
+    .footer {
+        padding: 80px 20px 40px;
+    }
+
+    .footer-content {
+        flex-wrap: wrap; /* Cho phép các mục xuống dòng */
+        gap: 40px;
+    }
+
+    .contact-container {
+        margin: 60px 20px;
+    }
+
+    .contact-info, 
+    .contact-form {
+        width: 100%;
+    }
+
+    .form-group {
+        flex-direction: column; /* Các trường nhập liệu xếp chồng lên nhau */
+    }
+}
+
+@media (max-width: 768px) {
+    .top-header {
+        flex-direction: column;
+        padding: 10px;
+        text-align: center;
+        gap: 10px;
+        position: static;
+    }
+
+    .top-header .lang {
+        position: static;
+        transform: none;
+    }
+
+    .main-header {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        width: 100%;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 20px 0;
+    }
+
+    .search-area {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .breadcrumb {
+        padding: 40px 20px 0;
+    }
+
+    .contact-container {
+        flex-direction: column;
+        margin: 40px 20px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-section {
+        align-items: center;
+        width: 100%;
+    }
+}
